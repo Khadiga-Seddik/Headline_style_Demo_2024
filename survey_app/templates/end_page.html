@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{%load static%}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>🏆 Top 10 Winners 🏆</title>
+
+</head>
+
+<body>
+    
+    <div class="personal_info_body">
+        <div class="container">
+            <!-- <div class="thanks_h1">
+                <h1> 🏆 Top 10 Winners 🏆 </h1>
+            </div> -->
+            <div class="thanks_img">
+                <img src="{% static 'images/thanks.png'%}" alt="">
+            </div>
+            
+            <div class="thanks_p">
+                {% if correct is not none and total is not none %}
+                    <p> You selected <span class="rank">{{correct}}</span> correct out of your <span class="rank">{{total}}</span> selected headlines </p>
+                {% else %}
+                    <p> No records found</p>
+                {% endif %}
+            </div>
+
+            <div class="thanks_h1">
+                <h1> 🏆 Top 5 Winners 🏆 </h1>
+            </div>
+            <div class="top_10_container">
+                {% if top_ten is not none %}
+                
+                <ul class="leaderboard">
+                {% for user in top_ten %}
+                    <li> <p>{{user.name}}  </p><span class="rank">   {{user.score}}</span></li>
+                {% endfor %}
+            </ul>
+            
+                {% else %}
+                <p> No records found</p>
+                {% endif %}
+            
+            </div>
+  </div>
+
+        <!-- Copied alert -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="copied_alert">Copied</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+            /* Select the text field */
+            copyText.select();
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+            /* Alert the copied text */
+            document.querySelector(".copied_alert").innerHTML = "Copied the text: " + copyText.value;
+            ReadLater_alert();
+        }
+
+        window.history.pushState(null, "", window.location.href);    
+        window.onpopstate = function() {
+            window.history.pushState(null, "", window.location.href);
+        };
+    </script>
+
+</body>
+
+</html>

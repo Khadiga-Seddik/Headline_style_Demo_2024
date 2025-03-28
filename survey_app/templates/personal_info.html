@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Personal info</title>
+
+</head>
+
+
+<body class="personal_info_body">
+
+    <div id="formLoader" class="loading-screen" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Please be patient while we generate the results. This process may take 20-30 seconds</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <h4 class="h4_header">Out of these headlines, which one would you be most inclined to click on?</h4>
+            <!-- <p class="h4_subheader">Please answer the questions below about your favorite headline style. </p> -->
+        </div>
+
+
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+
+            <!---------------------------------------  news items ------------------------------------->
+
+
+            <!------------------------- Headline Stlyes --------------------------->
+            <!-- field_name = preferred_headline, preferred_headline2, preferred_headline3 -->
+            <!-- headline_titles = 3 titles under each field_name, with html tags around each title -->
+            {% for field_name, headline_titles in questions %}
+
+            <div class="flabel personal_info_row">
+                <div class="pi_choices">
+                    {% for title in headline_titles %}
+
+                    <div class="form-check">
+                        <!-- <p id="selectedValue"></p> -->
+
+                        <!-- {{ title.tag }} is the radio input field. for example: -->
+                        <!-- <input type="radio" name="preferred_headline3" value="question" class="radio-inline" required id="id_preferred_headline3_2"> -->
+
+
+                        <div class="style_above">
+                        <div class="selected-value" id="selectedValue_{{ title.id_for_label}}">
+                            <!-- Filled dynamically with JavaScript -->
+                            <!-- selectedValue_{{ title.id_for_label}} -->
+                                 
+                        </div>
+
+                        {{ title.tag }}
+
+                        <!-- <label for="id_preferred_headline3_2">Question</label>
+                        <div id="output"></div> -->
+
+                        <label class="form-check-label" for="{{ title.id_for_label }}">
+
+                            <a>
+                                <div class="img_headline_style">
+                                    <img src="{{ headline_titles.label }}" alt="Uh OH !">
+                                </div>
+                                <div class="title_container">
+                                    <p id="title">{{ title.choice_label }}</p>
+                                </div>
+                            </a>
+                        </label>
+                    </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+                {{ headline_field.errors }}
+            </div>
+
+            {% endfor %}
+
+
+            <p><span  style="display: none;" id="output_headline"></span></p>
+            <p><span  style="display: none;" id="output_headline2"></span></p>
+            <p><span  style="display: none;" id="output_headline3"></span></p>
+
+
+
+            <!------------------------- description_btn --------------------------->
+
+            <!-- <div class="description_container">
+                <button class="description_btn">
+                    <img src="{% static 'basic_app/images/info.png'%}" alt="">
+                    <div class="tooltip-content">
+                        <p>You have <strong>5 minutes</strong> to <strong>browse</strong> the website. <strong>Click</strong> on and
+                            <strong>read</strong> the articles that you are interested in. You can add some of them to
+                            <strong>Read later</strong> list.
+                        </p>
+                    </div>
+                </button>
+            </div> -->
+
+            <!-- Custom Alert Overlay -->
+<div class="alert-overlay" id="customAlert">
+    <div class="alert-box">
+        <p id="alertMessage">This is a custom alert!</p>
+        <button onclick="closeAlert()">Next</button>
+    </div>
+</div>
+
+            <button class="btn-lg" id="descriptionBtn" type="button" class="btn-lg col-4"> Next</button>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p class="copied_alert">Copied</p>
+                </div>
+    
+            </div>
+
+
+            <div class="button_container">
+
+
+
+                <!------------------------- Next --------------------------->
+
+                <!-- <button class="btn-lg" type="submit " name="submit" class="btn-lg col-4"> Next </button> -->
+            </div>
+
+        </form>
+    </div>
+
+    </div>
+    <!-- <a id="back2Top" title="Back to top" href="#">&#10148;</a> -->
+    <footer>
+        <p class="copyright"> &#169; NEWSREC PROJECT</p>
+    </footer>
+
+    <!-- <script src="{% static 'js/main.js' %}"></script> -->
+    <script>
+        // Function to handle radio button changes
+        function handleRadioChange(name, outputId) {
+            const radioButtons = document.querySelectorAll(`input[name="${name}"]`);
+            const outputDiv = document.getElementById(outputId);
+
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    if (this.checked) {
+                        outputDiv.textContent = this.value; // Display the value in the corresponding output div
+                    }
+                });
+            });
+        }
+
+        // Call the function for each group of radio buttons
+        handleRadioChange('preferred_headline', 'output_headline');
+        handleRadioChange('preferred_headline2', 'output_headline2');
+        handleRadioChange('preferred_headline3', 'output_headline3');
+
+
+
+
+        document.getElementById('descriptionBtn').addEventListener('click', function () {
+            // Get the text inside the spans by their IDs
+            const headline1 = document.getElementById("output_headline").textContent;
+            const headline2 = document.getElementById("output_headline2").textContent;
+            const headline3 = document.getElementById("output_headline3").textContent;
+
+
+            // Get the preferred headline choices
+            const choices = [
+                headline1,
+                headline2,
+                headline3,
+            ];
+
+            // Count the occurrences of each headline style
+            const count = {};
+            choices.forEach(choice => {
+                count[choice] = (count[choice] || 0) + 1;
+            });
+            console.log("headline counter =", count);
+
+            // Get the most common headline style(s)
+            const mostCommon = Object.entries(count).sort((a, b) => b[1] - a[1]);
+            console.log("most common headline =", mostCommon);
+
+            // If there is a tie, randomly select one of the tied styles
+            let selectedStyle;
+
+            if (mostCommon.length > 1 && mostCommon[0][1] === mostCommon[1][1]) {
+                console.log("choices =", choices);
+                selectedStyle = choices[Math.floor(Math.random() * choices.length)];
+                console.log("selected style =", selectedStyle);
+            } else {
+                console.log("common style found");
+                selectedStyle = mostCommon[0][0];
+            }
+
+            showAlert(selectedStyle);
+        });
+
+
+        // Add event listeners to radio buttons to update the corresponding div with the selected value
+        document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+
+                    // Get the name attribute to identify the group of radio buttons
+                    const radioGroup = document.querySelectorAll(`input[name="${this.name}"]`);
+        
+                   // Loop through the radio buttons in the same group
+                    radioGroup.forEach(function (radioButton) {
+                    // Get the corresponding selected value div
+                    const selectedValueDiv = document.getElementById('selectedValue_' + radioButton.id);
+
+                    // Update the div only for the selected radio button, clear for others
+                    if (radioButton.checked) {
+                        selectedValueDiv.textContent = radioButton.value;  // Set text for the selected radio
+                    } else {
+                        selectedValueDiv.textContent = '';  // Clear text for unselected radios
+                    }
+                });
+                // // Get the corresponding selected value div
+                // const selectedValueDiv = document.getElementById('selectedValue_' + this.id);
+                
+                // // Update the div with the value of the selected radio button
+                // selectedValueDiv.textContent = this.value;  
+            });
+        });
+
+            ////////////////////////// The alert
+
+        // Function to show the custom alert with a message
+    function showAlert(message) {
+        document.getElementById("alertMessage").textContent = `Selected Style: ${message}`;
+        document.getElementById("customAlert").style.display = "flex";
+    }
+
+    // Function to close the alert
+    function closeAlert() {
+        document.getElementById("customAlert").style.display = "none";
+    }
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

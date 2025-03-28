@@ -1,0 +1,1842 @@
+/* Import global font family */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/******************** CSS reset *******************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+****************************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+i {
+    font-style: italic;
+}
+
+/*************** My main style ***************/
+html {
+    background-color: #f0f0f0;
+}
+
+/*************** start page ***************/
+.start-pg-header-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.logos{
+    display: flex;
+}
+
+.start-pg-header-bar h1 {
+    display: block;
+    margin: auto;
+    text-align: left;
+    padding-right: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section {
+    font-size: 21px;
+    padding: 20px 0px;
+    margin: auto;
+    max-width: 950px;
+}
+.centered_section{
+    text-align: center;
+    padding: 60px;
+}
+.centered_note{
+    text-align: center;
+    /* padding: 20px 0px; */
+    margin: auto;
+    max-width: 950px;
+    font-size: 19px;
+    color: red;
+}
+
+
+.start-pg-container h2 {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.start-pg-container p {
+    font-size: 21px;
+}
+
+.uib-logo,
+.NEWSREC-logo {
+    width: 85px;
+    float: right;
+    margin: 40px;
+    text-align: center;
+}
+.uib-logo{
+    width: 70px;
+    margin-right: 0;
+}
+
+.uib-logo img,
+.NEWSREC-logo img {
+    width: 100%;
+    /* max-width: 150px; */
+}
+
+/* .NEWSREC-logo {
+    float: right;
+} */
+
+.NEWSREC-logo img {
+    background-color: black;
+}
+
+.project_title {
+    margin-right: 20px;
+}
+.project_title h1{
+    font-size: 32px;
+}
+
+
+.section_bg{
+    background-color: #f0f0f0;
+    padding: 15px 0;
+}
+.section_bg ul{
+    list-style-type: disc;
+    padding: 10px 20px;
+}
+
+/*************** Front page ***************/
+header {
+    padding: 30px 20px;
+    position: fixed;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.logo {
+    width: 90px;
+    margin: auto;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    font-size: 0;
+    padding: 0 10px;
+}
+
+header.shrink {
+    background-color: rgba(255, 255, 255, .98);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .05);
+    padding: 10px 20px;
+}
+
+header.shrink .logo {
+    width: 50px;
+}
+
+/* .left_content,
+.right_content,
+.center_content {
+    
+} */
+
+
+/* .right_content {
+    margin-right: 0;
+    display: none;
+} */
+
+
+.timer_container {
+    padding-left: 4px;
+    text-align: center;
+}
+
+.timer_container>span {
+    font-size: 11px;
+    color: #777;
+    display: block;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+
+.timer_container>strong {
+    color: #333;
+    font-size: 17px;
+}
+
+.front_page_body {
+    margin: 0;
+}
+
+.main_wrapper {
+    max-width: 850px;
+    margin: auto;
+    padding: 125px 20px 20px 20px;
+}
+
+.news_unit {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
+    position: relative;
+}
+
+.news_unit:hover {
+    box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+}
+
+.news_unit>a {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+    padding-bottom: 40px;
+}
+.img_headline_style img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.img_container img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.title_container p {
+    color: #444;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 28px;
+    padding: 20px 20px 23px 20px;
+}
+
+.news_unit>a:hover .title_container p {
+    color: black;
+    /* text-decoration: underline; */
+}
+
+.grid_container .grid_item:nth-child(1) .title_container p {
+    font-size: 26px;
+    line-height: 39px;
+}
+
+.actions_container {
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.reading_time_div,
+.addTo_readLater {
+    padding: 5px 20px 3px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+}
+
+.reading_time_div>span {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #555;
+    margin-right: 3px;
+}
+
+.addTo_readLater>span {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #555;
+    margin: 0 2px;
+}
+
+.reading_time_div>p,
+.addTo_readLater>p {
+    display: inline-block;
+    font-size: 14px;
+    color: #555;
+}
+
+.addTo_readLater:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.addTo_readLater.selected_green{
+    background-color: rgba(0, 128, 0, 0.7); /* Green background with some transparency */
+    color: white; /* Change text color to white for better visibility */
+}
+.addTo_readLater.selected_red{
+    background-color: rgba(242, 0, 0, 0.927); /* red background with some transparency */
+    color: white; /* Change text color to white for better visibility */
+}
+.addTo_readLater.selected {
+    }
+
+
+.addTo_readLater.selected > p {
+    color: #fff;
+    fill: #fff;
+    display: none;
+}
+.addTo_readLater.selected > span{
+    display: none;
+}
+.addTo_readLater .correct_checkmark, .wrong_checkmark{
+    display: none;
+    font-size: 14px;
+}
+.addTo_readLater .correct_checkmark svg, .wrong_checkmark svg{
+    vertical-align: middle;
+    margin: 3px;
+}
+.addTo_readLater.selected_green .correct_checkmark{
+    display: block;
+}
+
+.addTo_readLater.selected_red .wrong_checkmark{
+    display: block;
+}
+
+
+/******************* Dropdown menu ********************/
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: #333;
+    padding: 8px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.dropdown .dropbtn i {
+    width: 0;
+    height: 0px;
+    display: inline-block;
+    border: solid transparent 5px;
+    border-top-color: #333;
+    vertical-align: middle;
+    margin-left: 4px;
+    margin-bottom: -5px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.dropdown:hover .dropbtn i {
+    width: 0;
+    height: 0px;
+    display: inline-block;
+    border: solid transparent 5px;
+    border-bottom-color: #333;
+    vertical-align: middle;
+    margin-left: 4px;
+    margin-top: -5px;
+    margin-bottom: 3px;
+}
+
+
+.dropdown-content {
+    width: 350px;
+    overflow: auto;
+    /* display: none; */
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 5px;
+    /* transition */
+    top: 80%;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    z-index: -1;
+    visibility: hidden;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #333;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    /* transition */
+    transition: all .25s ease-in-out;
+    opacity: 1;
+    top: 108%;
+    z-index: 1;
+    visibility: visible;
+}
+
+/*************** Add to readLater alert ***************/
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 40%;
+    font-size: 23px;
+}
+
+.modal-buttons {
+    margin-top: 20px; /* Adds space above the buttons */
+    display: flex;
+    justify-content: center;
+    gap: 0px; /* Adds space between the buttons */
+}
+.modal-buttons button:first-child {
+    margin-right: 10px; /* Adjust the space between the buttons */
+}
+
+.modal-buttons button:last-child {
+    margin-left: 10px; /* Adjust the space between the buttons */
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/******************* description_container ********************/
+.description_container {
+    /* position: -webkit-sticky; */
+    /* Safari & IE */
+    /* position: sticky; */
+    position: fixed;
+    z-index: 3;
+    top: 125px;
+    width: 160px;
+    left: 15px;
+}
+
+.description_Btn_cont{
+    position: fixed;
+    z-index: 3;
+    top: 80px;
+    width: 160px;
+    left: 15px;
+
+}
+
+.description_btn{
+    border: none;
+    border-radius: 50%;
+    background: white;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
+    line-height: 0px;
+    opacity: .75;
+}
+
+.description_container img{
+    width: 75%;
+    border-radius: 100%;
+}
+
+.description_btn:hover{
+    cursor: pointer;
+    opacity: 1;
+    background-color: rgb(155, 155, 175);
+    color: #000;
+}
+
+.tooltip-content {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 0.5em;
+    min-width: 100%;
+    /* height: 100px; */
+    line-height: normal;
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 10%);
+    transition: all .25s ease-in-out;
+    z-index: 1;
+    visibility: visible;
+  }
+
+
+.tooltip-desc{
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.tooltip-desc strong{
+    /* font-size: 16px; */
+    color: brown;
+}
+
+.tooltip-title{
+    font-size: 20px;
+    color: brown;
+    font-weight: bold;
+}
+
+.tooltip-content ul {
+    list-style-type: disc; /* Adds bullet points */
+    margin-left: 20px; /* Adjust for proper alignment */
+    padding-left: 0;
+    text-align: left; /* Aligns text to the left */
+}
+
+.tooltip-content ul li {
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 15px;
+}
+
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+    text-align: center;
+ }
+/******************* Personal info ********************/
+
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 999;
+    position: fixed;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    /* position: fixed; */
+    bottom: 10px;
+    right: 0;
+    /* background-image: linear-gradient(-225deg, #B7F8DB 0%, #a1d8e9 100%); */
+    color: rgb(61, 57, 57);
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 12px 12px 12px 12px;
+}
+
+#back2Top:hover {
+    background-color: rgb(155, 155, 175);
+    color: #000;
+}
+
+.personal_info_body {
+    padding: 50px 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.btn-lg {
+    background: #fbfbfb;
+    color: #333;
+    padding: 0 25px !important;
+    margin: auto;
+    border: solid 2px #333;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    /* height: 50px; */
+    line-height: 50px;
+    display: inline-block;
+}
+
+.btn-lg:hover {
+    background-image: none !important;
+    background-color: #1f2021 !important;
+    border-color: #1f2021;
+    /* background-image: linear-gradient(-225deg, #c8e9da 0%, #bbd8e0 100%); */
+    color: #fff;
+
+}
+
+#error {
+    color: #e73b3b;
+    font-size: 12px !important;
+    text-align: left;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: auto;
+
+}
+
+.personal_info_body .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 1280px;
+    margin: 20px auto;
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+    background-color: #fff;
+    width: calc(100% - 40px);
+}
+
+.h4_header {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 30px;
+}
+
+.h4_subheader {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 10px 30px
+}
+
+.hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #f0f0f0, #00b9ff, #59d941, #f0f0f0);
+}
+
+.flabel {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 40px;
+    align-items: stretch;
+    text-align: left;
+}
+
+.flabel p {
+    font-size: 19px;
+    padding: 15px 0;
+    font-weight: bold;
+    margin-top: 15px;
+    line-height: 25px;
+    /* text-align: left; */
+}
+
+.small_text {
+    font-size: 14px;
+    color: #888;
+}
+
+.button_container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+select {
+    border: solid 1px #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.copyright {
+    padding: 20px;
+    color: #999;
+}
+
+.textinput_mturk{
+    /* border: none; */
+    border: solid 1px #ccc; 
+    padding: 0px;
+    border-radius: 5px;
+    height: 60px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+.controlShow{
+    display: none;
+}
+
+.controlShowStrength{
+    display: none;
+}
+
+.pi_choices{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    /* align-items: center; */
+}
+
+.personal_info_body .form-check, .personal_info_body .form-check:hover {
+    background-color: transparent;
+    border:none;
+    padding: 0;
+}
+.personal_info_body .form-check input[type=radio]{
+    visibility: hidden;
+    z-index: -1;
+    position: absolute;
+}
+.personal_info_body .form-check label{
+    background-color: #e9ecef;
+    display: block;
+    padding: 5px;
+    border-radius: 15px;
+    height: 100%;
+    border: solid 4px transparent;
+}
+.personal_info_body .form-check label:hover{
+    background-color: #eef2f6;
+    cursor: pointer;
+}
+.personal_info_body .form-check input[type=radio]:checked ~ label{
+   border-color: green;
+}
+.personal_info_row{
+    margin-bottom: 70px;
+}
+.personal_info_row .title_container p{
+    margin: 0;
+    padding: 7px;
+}
+.personal_info_row h1{
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+/******************* Article page *******************/
+
+.article_page_img {
+    width: 100%;
+    /* float:left;  */
+    /* margin: 2%; */
+    text-align: center;
+}
+
+.article_page_img img {
+    width: 100%;
+    border-radius: 15px;
+    /* max-width: 700px; */
+}
+
+.article_page_caption {
+    padding: 15px 0 0;
+    text-align: center;
+    font-size: 17px;
+    font-style: italic;
+    color: #777;
+}
+
+.article_body_container {
+    padding: 60px 40px 40px 40px;
+    margin: auto;
+    max-width: 850px;
+}
+
+.article_page_title {
+    padding: 20px 0 0 0;
+    font-size: 45px;
+    line-height: 53px;
+    font-weight: 900;
+    /* max-width: 850px; */
+}
+
+.article_page_text {
+    padding-top: 40px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.article_page_secondary {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 30px 0;
+    /* text-align: center; */
+    font-size: 18px;
+    color: #888;
+}
+
+
+.back_button {
+    width: 25px;
+}
+
+.back_button img {
+    cursor: pointer;
+    width: 100%;
+    /* max-width: 150px; */
+}
+
+/******************* Thanks *******************/
+.thanks_h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #0560a6;
+    padding: 20px 0 40px 0;
+}
+
+.thanks_p {
+    padding: 40px 20px 60px 20px;
+    font-size: 40px;
+    line-height: 1.5;
+    /* font-weight: bold; */
+}
+
+.thanks_img {
+    width: 20%;
+    margin: auto;
+}
+
+.thanks_img img {
+    width: 100%;
+    margin: auto;
+    max-width: 150px;
+}
+
+.mturk_code{
+    border: solid #aaa 2px;
+    border-radius: 8px;
+    width: 282px;
+    margin: 40px 10px;
+    font-size: 21px;
+    padding-left: 15px;
+    line-height: 50px;
+}
+
+.code_text p{
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.form_txtarea{
+    width: 100%;
+    max-width: 600px;
+    resize: vertical;
+}
+
+.col-sm-7 b{
+    line-height: 32px;
+    font-size: 20px;
+
+}
+
+/******************* The grid system for articles *******************/
+
+/* Salience Grid system */
+/* .grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "one one one"
+        "two three three"
+        "four four five"
+        "six seven eight"
+    ;
+}
+
+.grid_container .grid_item:nth-child(1) {
+    grid-area: one;
+}
+
+.grid_container .grid_item:nth-child(2) {
+    grid-area: two;
+}
+
+.grid_container .grid_item:nth-child(3) {
+    grid-area: three;
+}
+
+.grid_container .grid_item:nth-child(4) {
+    grid-area: four;
+}
+
+.grid_container .grid_item:nth-child(5) {
+    grid-area: five;
+}
+
+.grid_container .grid_item:nth-child(6) {
+    grid-area: six;
+}
+
+.grid_container .grid_item:nth-child(7) {
+    grid-area: seven;
+}
+
+.grid_container .grid_item:nth-child(8) {
+    grid-area: eight;
+} */
+
+/* 3 items per row grid system */
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.grid_container .grid_item {
+    width: 100%; /* Ensures each item takes up full width of its grid cell */
+}
+
+.grid_container .grid_item:nth-child(1) {
+    grid-row: 1;
+    grid-column: span 1; /* Spans all three columns */
+}
+
+.grid_container .grid_item:nth-child(n+2) {
+    grid-row: auto;
+    grid-column: span 1; /* Each item from second onwards spans one column */
+}
+
+/******************* Start page styling *******************/
+
+.frontpage_h1 {
+    font-size: 36px; /* Adjust the size as per your requirement */
+    color: #333; /* Font color */
+    margin-bottom: 20px; /* Space below the heading */
+    letter-spacing: 1.5px; /* Adding space between characters */
+    text-align: center;
+}
+
+.frontpage_text {
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0; /* Adding top and bottom margin */
+    max-width: 75%; /* Controlling width */
+    margin-left: auto; /* Centering */
+    margin-right: auto; /* Centering */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Optional: Adding a slight shadow */
+    line-height: 115%;
+}
+
+.frontpage_text ul {
+    padding-left: 40px; /* Increases indentation of the bullet points */
+    margin-top: 15px; /* Removes the default top margin of ul */
+}
+
+.instructions {
+    padding-left: 20px; /* Adds indent to the list */
+    list-style-type: none; /* Removes default list style */
+    margin-top: 10px; /* Adds space above the list */
+    margin-bottom: 10px; /* Adds space below the list */
+}
+
+.instructions li {
+    margin-bottom: 10px; /* Adds space between list items */
+    position: relative; /* Needed for custom bullet points */
+    padding-left: 30px; /* Adds space for custom bullet points */
+}
+
+.instructions li::before {
+    content: '•'; /* Custom bullet point */
+    color: #333; /* Bullet point color */
+    font-size: 20px; /* Bullet point size */
+    position: absolute; /* Positioning relative to the li */
+    left: 0; /* Aligns bullet to the left */
+    top: 50%;
+    transform: translateY(-50%); /* Centers bullet vertically */
+}
+
+.frontpage_text li {
+    margin-bottom: 15px; /* Adds space between bullet points */
+}
+
+/* Styling for the buttons */
+.choice_container {
+    margin-top: 50px; /* Space above the button container */
+}
+
+.choice_btn {
+    display: block; /* Makes the button occupy its own line */
+    margin: 20px auto; /* Adds 10px space above and below, auto centers it */
+    padding: 10px 20px; /* Add inner padding to buttons */
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none; /* Removes the underline from the anchor element */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 20px; /* Font size */
+    transition: background-color 0.3s; /* Transition effect for hover state */
+    width: 350px;
+}
+
+/* Hover state for the button */
+.choice_btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+
+/* Responsive media queries */
+
+@media only screen and (max-width: 400px) {
+    .grid_container {
+        display: block;
+    }
+}
+
+
+/******************* end page styling *******************/
+
+.endpage_wrapper {
+    max-width: 90%;
+    margin: auto;
+    padding: 125px 20px 20px 20px;
+}
+
+
+/* Party Preference Styling */
+.party-preference-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 20px;
+}
+
+/* Applies to all h1 tags within the container */
+.party-preference-container h1 {
+    font-size: 2rem; /* Default size for both h1 tags */
+    color: #333;
+    display: block; /* Ensures each h1 is on its own line */
+}
+
+/* Specific to the first h1 tag */
+.party-preference-container h1:first-child {
+    margin-bottom: .5rem;
+    padding-bottom: .25rem;
+    border-bottom: 2px solid #666; /* Underline for only the first h1 */
+}
+
+/* Specific to the second h1 tag */
+.party-preference-container h1.dynamic-party {
+    font-size: 2.5rem; /* Larger size for the dynamic content */
+    color: #3f3f3f; /* Different color for the dynamic content */
+    font-weight: bold; /* Bold for the dynamic content */
+    margin-top: 0; /* Removes any top margin */
+}
+
+
+/* Main container flex adjustment */
+.endpage_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+
+/* Startpage Button */
+.startpage-button {
+    display: block; /* Makes the button occupy its own line */
+    margin: 20px auto; /* Adds 10px space above and below, auto centers it */
+    padding: 10px 20px; /* Add inner padding to buttons */
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none; /* Removes the underline from the anchor element */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 20px; /* Font size */
+    transition: background-color 0.3s; /* Transition effect for hover state */
+    width: 350px; /* Adjust width as needed */
+}
+
+/* Titles and Text */
+.endpage_container h1, .endpage_container h2 {
+    color: #333;
+}
+
+.endpage_container p {
+    color: #666;
+}
+
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center; /* Center the session-sections vertically */
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center; /* Center the session-sections vertically */
+}
+
+.session-section {
+    width: 90%; /* Make the session-section take full width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.session-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats-graph-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Allocate 1/3 of the space to stats and 2/3 to graph */
+    gap: 20px;
+    align-items: start; /* Align the stats and graph at the top */
+}
+
+.stats-container {
+    width: 100%; /* Stats container takes the full width allocated to it */
+    padding-top: 30px;
+}
+
+.chart-container {
+    width: 80%; /* Chart container takes the full width allocated to it */
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 10px;  
+
+}
+
+/* Styles for table */
+.stats-container table {
+    width: 100%; /* Make table use full width of its container */
+    border-collapse: collapse; /* Collapse borders for a clean look */
+}
+
+.stats-container th,
+.stats-container td {
+    border: 1px solid #ddd; /* Light gray border for each cell */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to left within cells */
+}
+
+.stats-container th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+}
+
+/* Styles for canvas (graph) */
+.chart-container canvas {
+    width: 100%; /* Canvas takes full width of its container */
+    height: auto; /* Height is automatic to maintain aspect ratio */
+}
+
+@media (max-width: 768px) { /* Adjust the pixel value based on your breakpoint */
+    .stats-graph-container {
+        grid-template-columns: 1fr; /* Stack stats and graph on top of each other */
+    }
+}
+
+
+
+
+/******************* sport article styling *******************/
+/* Define a class for the toggled state */
+.toggled-overlay {
+    position: relative;
+  }
+  
+  .toggled-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    border-radius: inherit;
+    z-index: 1; /* overlay sits on top of other content */
+  }
+
+  .checkmark {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the checkmark */
+    /* Set the size of the checkmark image if needed */
+    width: 100px; /* Example size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2;
+  }
+  
+  .news_unit.selected .checkmark {
+    display: block; /* Show the checkmark when the .news_unit is selected */
+  }
+
+
+  .username_container {
+    text-align: center; /* Center the container */
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+.username_input {
+    width: 50%; /* Adjust width as needed */
+    padding: 10px; /* Add padding for a larger click area */
+    font-size: 1rem; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add some margin below the input */
+    
+    /* Add more styles here */
+    border: 1px solid #ccc; /* Example border */
+    border-radius: 5px; /* Rounded corners */
+    
+    /* Center the input text */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    
+    /* Placeholder styling */
+    color: black; /* Grey text for placeholder */
+}
+
+/* Style for placeholder text */
+.username_input::placeholder {
+    color: #888; /* Adjust the color as needed */
+    font-style: italic; /* Optional: makes it clear it's a placeholder */
+}
+
+/* Remove the label */
+label[for="username"] {
+    display: none;
+}
+
+
+.messages-placeholder {
+    min-height: 35px; /* Adjust the height as needed */
+    text-align: center;
+    margin: 10px 0;
+}
+
+.messages p {
+    color: red; /* or any color that indicates an error */
+    font-weight: bold;
+    margin: 0; /* Removes default paragraph margin */
+    padding: 10px 0; /* Gives some spacing inside the message area */
+}
+
+
+
+
+/******************* spot end page styling *******************/
+
+.leaderboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.leaderboard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enables scrolling if more items than can fit */
+    height: 300px; /* Adjust height as needed */
+}
+
+.leaderboard h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 1.5rem; /* Size of the leaderboard titles */
+    margin-bottom: 10px; /* Spacing between the title and the list */
+    text-align: center;
+}
+
+.leaderboard ol {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+}
+
+.leaderboard li {
+    font-family: 'Verdana', sans-serif;
+    color: #666;
+    padding: 5px 0; /* Spacing between list items */
+}
+
+.leaderboard-empty {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* New style for the score container */
+.score-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 25px;
+}
+
+.score-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: .5rem;
+    display: block; /* Adjust if you want inline or block */
+    color: #333;
+}
+
+.score-container .score-pos {
+    font-size: 2.5rem;
+    color: #4CAF50; /* Adjust the color to match your design */
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.score-container .score-neg {
+    font-size: 2.5rem;
+    color: #f44336; /* Adjust the color to match your design */
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/******************* Party Preference Styling *******************/
+.party-preference-container {
+    grid-area: party;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.party-preference-container h1:first-child {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    padding-bottom: .25rem;
+    border-bottom: 2px solid #666;
+    display: inline-block;
+}
+
+.party-preference-container h1:last-child {
+    font-size: 2.5rem;
+    color: #3f3f3f;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* Score color based on positive or negative */
+.score-positive {
+    color: #4CAF50; /* Green color for positive scores */
+}
+
+.score-negative {
+    color: #f44336; /* Red color for negative scores */
+}
+
+
+
+
+
+/* Leaderboard table adjustments */
+.leaderboard table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.leaderboard th,
+.leaderboard td {
+    padding: 8px;
+    text-align: left; /* Default alignment */
+}
+
+/* Specific alignment for each column */
+.leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { 
+    text-align: left; /* Rank aligned to the left */
+    width: 10%;
+}
+
+.leaderboard th:nth-child(2), .leaderboard td:nth-child(2) { 
+    text-align: center; /* Username aligned to the center */
+    width: 60%;
+}
+
+.leaderboard th:nth-child(3), .leaderboard td:nth-child(3) { 
+    text-align: right; /* Score aligned to the right */
+    width: 30%;
+}
+
+/* Background colors for top positions */
+.first-place { background-color: gold; }
+.second-place { background-color: silver; }
+.third-place { background-color: #cd7f32; } /* Bronze color */
+
+/* Hover effect for rows */
+.leaderboard tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Ensure the background color fills the entire row */
+.leaderboard tbody tr {
+    background-clip: padding-box;
+}
+
+.fixed-bottom-right {
+    position: fixed; /* Keeps the button fixed during scrolling */
+    bottom: 20px;    /* Distance from the bottom of the viewport */
+    right: 20px;     /* Distance from the right of the viewport */
+    z-index: 1000;   /* Ensures the button stays above other content */
+    background: #fbfbfb;
+    color: #333;
+    padding: 10px 25px !important;
+    margin: auto;
+    border: solid 2px #333;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    /* height: 50px; */
+    line-height: 1;
+    display: inline-block;
+}
+
+.fixed-bottom-right:hover {
+    background-image: none !important;
+    background-color: #1f2021 !important;
+    border-color: #1f2021;
+    /* background-image: linear-gradient(-225deg, #c8e9da 0%, #bbd8e0 100%); */
+    color: #fff;
+
+}
+
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label span {
+    margin-left: 5px;
+}
+
+.button-subtitle {
+    display: block;
+    font-size: xx-small;
+    line-height: 1; /* Adjust line height for the subtitle */
+}
+
+.radio-options {
+    display: flex;
+    justify-content: space-around; /* or space-between for more spacing */
+    flex-wrap: wrap; /* In case the options can't fit in one line, they will wrap */
+}
+
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* This ensures that all children are centered horizontally */
+    text-align: center;
+    color: white;
+    /* font-weight: bold; */
+    font-size: large;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.form-check {
+    padding: 10px;
+    margin: 5px;
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 5px; /* Rounded borders */
+    border: 1px solid #ddd; /* Light grey border */
+    transition: background-color 0.3s ease;
+}
+
+.form-check:hover {
+    background-color: lightgray; /* Slightly darker grey on hover */
+}
+
+.form-check-label {
+    margin-left: 10px; /* Space between radio button and label */
+}
+
+/********************* leaderboard *********************/
+.top_10_container{
+    /* background: linear-gradient(135deg, #f06d06, #f2d50f); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+.leaderboard-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+/* h1 {
+    font-size: 2em;
+    color: #ffcc00;
+    margin-bottom: 20px;
+} */
+
+.leaderboard {
+    list-style: none;
+    background-color: #ff9900;
+}
+
+.leaderboard li {
+    background-color: #f0f8ff;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 12px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.leaderboard li:hover {
+    transform: scale(1.05);
+    background-color: #ffecb3;
+}
+
+.rank {
+    background-color: #ff9900;
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+}
+
+.leaderboard li p{
+    padding-right: 20px;
+    
+}
+ /*********************************** alert button ***********************************/
+ /* Basic styling for the overlay */
+ .alert-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Styling for the alert box itself */
+.alert-box {
+    background-color: #fff;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+.alert-box button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.alert-box button:hover {
+    background-color: #0056b3;
+}
+
+.alert-box p {
+    font-size: 30px;  /* Increase font size */
+    line-height: 53px;
+    color: #333;
+    /* font-weight: bold;  */
+}
+
+.highlight_red{
+    /* color: rgb(218, 32, 32); */
+    color:  #003366
+}
+
+.highlight_green{
+    color: #d64161ff;
+}
+
+.highlight_pink{
+    color: rgb(141, 28, 217); 
+}
+
+/* .form-check{
+    position: relative;
+
+} */
+.style_above{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+
+.selected-value{
+    text-align: center; /* Centers the text horizontally */
+    font-size: 24px;    /* Adjust this value to enlarge the text */
+    padding: 10px;
+    margin-bottom: 0;
+    height: 24px;
+}
+

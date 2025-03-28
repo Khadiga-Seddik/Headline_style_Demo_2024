@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <title>Welcome Page</title>
+</head>
+
+<body>
+    <div class="start-pg-header-bar section">
+        
+        <div class="project_title" >
+            <h1 class="highlight_red">How Headline Styles Can Make You Click on Articles You Disagree With</h1>
+        </div>
+        <div class="logos">
+            <div class="uib-logo">
+                <img src="{% static 'images/Uib_logo.png'%}" alt="">
+            </div>
+            <div class="NEWSREC-logo">
+                <img src="{% static 'images/newsrec_logo.png'%}" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="start-pg-container section">
+        <!-- <h5> <b>Welcome to our demo</b> </h5> -->
+        <p>We designed <strong class="highlight_green">custom-made NRSs </strong>using ChatGPT model to generate <strong class="highlight_green">personalized headlines</strong> based on reader’s preferred <strong class="highlight_green">headline style</strong> aiming to see how different styles influence article selection and 
+            political bias.
+            
+        </p>
+        <br>
+    </div>
+
+    <div class="section_bg">
+        <div class="section">
+            <h4> <b class="highlight_red">What do you need to do?</b> </h4>
+            <p></p>
+            <ul>
+                <li><p>Choose your preferred <strong class="highlight_pink">headline style</strong> from three sets of options</p></li>
+                <li><p>Browse articles from the news feed within a <strong class="highlight_pink">one-minute</strong> window.</p></li>
+                <li><p>Guess which articles have been <strong class="highlight_pink">manipulated</strong> to match your favorite headline style.</p></li>
+                <li><p><strong class="highlight_pink">Earn</strong> points for correct picks and <strong class="highlight_pink">lose</strong> points for mistakes.</p></li>
+                
+            </ul>
+            <p></p>
+            <!-- <div class="centered_note">
+                <p><b>Please note: The news articles used in this prototype are outdated and included solely for research purposes.</b></p>
+            </div> -->
+            </div>
+    </div>
+
+    
+    <div class="centered_section section">
+        <h5> <b>Enter your name:</b> </h5> 
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            
+            <!-- {{form.name.errors }} -->
+            <div>{{ form.name }}
+                <!-- Only show the 'name' field -->
+            </div>
+
+            <div class="button_container">
+                <button type="submit" value="Start" class="btn-lg"> Start </button>
+            </div>
+        </form>
+
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            //The first "set" of the counter in the localStorage
+            // also you have to set them in the presonal_info page and in loadCounter() in main.js
+
+                //The first "set" of the counter in the localStorage
+            // also you have to set them in the presonal_info page and in loadCounter() in main.js
+
+            var min = "0" + 1;
+            var sec = "0" + 0;
+            var read_later_articles = []; //string of objects with "id,aid,party" for each article to be sent to the user profile in the backend
+            // var read_later_urls = []; // contains the urls of the articles to be added to the read later dropdown menu
+            var read_later_titles = ""; // contains the the title of the articles to be added to the read later dropdown menu
+            var read_later_button_list = "";
+            var scrollPosition = 0;
+
+            localStorage.setItem("min", min);
+            localStorage.setItem("sec", sec);
+            localStorage.setItem("read_later_articles", read_later_articles);
+
+            localStorage.setItem("read_later_titles", read_later_titles);
+            localStorage.setItem("read_later_button_list", read_later_button_list)
+            localStorage.setItem("scrollPosition", scrollPosition)
+
+            console.log("min, sec! = ", min, " ",sec);
+
+        }
+    </script>
+
+</body>
+
+</html>
